@@ -1,0 +1,77 @@
+SENG 265 -- SPRING 2023
+ASSIGNMENT #2 EVALUATION
+========================
+
+Student name:   Phuong Pham
+Student number: V00980715
+Student login:  phuongphuongpham
+
+-----
+(1) route_manager.py submitted and named appropriately; runs
+without errors or warnings.
+some of the tester ran.
+
+-----
+(2) Tests passed (and further comments)
+The .csv files are empty.
+Only q1 .pdf files are generated.
+passed 2/10 tests.
+-----
+(3) Code formatting and structure:
+
+Positive aspects:
+
+Improvement opportunities:
+
+output:
+[tester] (INFO): Tests to run: 10
+[tester] (INFO): |Test 1|----------------------------------------
+[tester] (INFO): Attempting: python route_manager.py --AIRLINES="airlines.yaml" --AIRPORTS="airports.yaml" --ROUTES="routes.yaml" --QUESTION="q1" --GRAPH_TYPE="bar"
+YOUR CODE SHOULD BE HERE.
+[tester] (INFO): TEST PASSED: True
+[tester] (INFO): |Test 2|----------------------------------------
+[tester] (INFO): Attempting: python route_manager.py --AIRLINES="airlines.yaml" --AIRPORTS="airports.yaml" --ROUTES="routes.yaml" --QUESTION="q1" --GRAPH_TYPE="pie"
+YOUR CODE SHOULD BE HERE.
+[tester] (INFO): TEST PASSED: True
+[tester] (INFO): |Test 3|----------------------------------------
+[tester] (INFO): Attempting: python route_manager.py --AIRLINES="airlines.yaml" --AIRPORTS="airports.yaml" --ROUTES="routes.yaml" --QUESTION="q2" --GRAPH_TYPE="bar"
+YOUR CODE SHOULD BE HERE.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/pandas/core/indexes/base.py", line 3802, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "pandas/_libs/index.pyx", line 138, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/index.pyx", line 165, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5745, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas/_libs/hashtable_class_helper.pxi", line 5753, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'route_from_airport_id'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "route_manager.py", line 537, in <module>
+    main()
+  File "route_manager.py", line 513, in main
+    dictionary = question2(airlines_df, airports_df, routes_df, f2)
+  File "route_manager.py", line 149, in question2
+    to_from.append([row["route_to_airport_id"], row["route_from_airport_id"]])
+  File "/usr/local/lib/python3.8/dist-packages/pandas/core/series.py", line 981, in __getitem__
+    return self._get_value(key)
+  File "/usr/local/lib/python3.8/dist-packages/pandas/core/series.py", line 1089, in _get_value
+    loc = self.index.get_loc(label)
+  File "/usr/local/lib/python3.8/dist-packages/pandas/core/indexes/base.py", line 3804, in get_loc
+    raise KeyError(key) from err
+KeyError: 'route_from_airport_id'
+Traceback (most recent call last):
+  File "validator", line 188, in <module>
+    main()
+  File "validator", line 182, in main
+    validate_tests(execution_commands=commands)
+  File "validator", line 139, in validate_tests
+    produced_data = load_csv(open(required[0]))
+  File "/usr/local/lib/python3.8/dist-packages/csv_diff/__init__.py", line 18, in load_csv
+    headings = next(fp)
+StopIteration
+-----
+
+GRADE: D
+MARKS: 52
